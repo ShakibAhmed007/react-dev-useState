@@ -5,7 +5,13 @@ const Todo = () => {
   const [warning, setWarning] = useState('');
 
   const handleInput = e => {
-    console.log(e.target.value);
+    const inputValue = e.target.value;
+    const warning = inputValue.includes('js')
+      ? 'You need to learn javascript'
+      : 'Fine !!!';
+
+    setTodo(inputValue);
+    setWarning(warning);
   };
 
   return (
